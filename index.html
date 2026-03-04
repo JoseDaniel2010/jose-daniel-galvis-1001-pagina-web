@@ -5,11 +5,9 @@
 <title>Proyecto de Investigación - Automatización</title>
 
 <style>
-
 body{
     margin:0;
     font-family: 'Segoe UI', sans-serif;
-    background: #0f2027;
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
     color: white;
 }
@@ -66,22 +64,6 @@ h2{
     padding-left:10px;
 }
 
-/* Botón */
-button{
-    background:#00f2ff;
-    border:none;
-    padding:12px 25px;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:bold;
-    transition:0.3s;
-}
-
-button:hover{
-    background:white;
-    color:black;
-}
-
 /* Footer */
 footer{
     text-align:center;
@@ -92,6 +74,60 @@ footer{
     opacity:0.7;
 }
 
+/* Juego */
+#board{
+    display:grid;
+    grid-template-columns:repeat(6,60px);
+    grid-template-rows:repeat(6,60px);
+    gap:5px;
+    justify-content:center;
+    margin-top:20px;
+}
+
+.cell{
+    width:60px;
+    height:60px;
+    border-radius:8px;
+    background:white;
+}
+
+.player{
+    background:#00bfff;
+}
+
+.obstacle{
+    background:#ff4c4c;
+}
+
+.goal{
+    background:#4CAF50;
+}
+
+button, .control-btn{
+    background:#00f2ff;
+    border:none;
+    padding:12px 25px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+button:hover, .control-btn:hover{
+    background:white;
+    color:black;
+}
+
+.controls{
+    text-align:center;
+    margin-top:10px;
+}
+
+#info{
+    text-align:center;
+    margin-top:10px;
+    font-size:16px;
+}
 </style>
 </head>
 <body>
@@ -132,16 +168,41 @@ automatizados permiten mejorar la eficiencia, reducir errores humanos y optimiza
 <h2>Actividad Práctica</h2>
 <p>
 Como evidencia práctica se desarrollará un juego didáctico tipo tablero 6x6,
-controlado mediante comandos de teclado, aplicando principios de programación
-y automatización.
+controlado mediante comandos de teclado o botones en pantalla, aplicando principios
+de programación y automatización.
 </p>
-<br>
-<button>Juego Próximamente</button>
-</section>
 
-<footer>
-© 2026 - Proyecto Académico | Aplicación de la Automatización
-</footer>
+<div id="board"></div>
 
-</body>
-</html>
+<div class="controls">
+<button class="control-btn" onclick="move('w')">↑</button><br>
+<button class="control-btn" onclick="move('a')">←</button>
+<button class="control-btn" onclick="move('s')">↓</button>
+<button class="control-btn" onclick="move('d')">→</button>
+</div>
+
+<div id="info">
+Nivel: <span id="level">1</span> | Puntos: <span id="score">0</span> | Vidas: <span id="lives">3</span> | Tiempo: <span id="timer">60</span>s
+</div>
+
+<script>
+const board = document.getElementById("board");
+const size = 6;
+
+let level = 1;
+let score = 0;
+let lives = 3;
+let timer = 60;
+let timerInterval;
+
+let player = {x:0, y:0};
+let goal = {x:5, y:5};
+let obstacles = [];
+
+function generateObstacles(){
+    obstacles=[];
+    for(let i=0;i<level+4;i++){
+        let obsX, obsY;
+        do{
+            obsX=Math.floor(Math.random()*size);
+            obsY=Math.floor(Math.random()*size);
