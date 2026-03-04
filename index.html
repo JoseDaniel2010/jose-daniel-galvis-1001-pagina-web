@@ -69,6 +69,7 @@ h2{
     background: #111;
     padding: 20px;
     border-radius: 12px;
+    min-height: 420px; /* fuerza altura para que el tablero aparezca */
 }
 
 /* Footer */
@@ -93,7 +94,8 @@ footer{
     border-radius:12px;
     background: #222;
     border:2px solid #00f2ff;
-    width: max-content;
+    width: 380px;       
+    height: 380px;      
 }
 
 .cell{
@@ -198,8 +200,4 @@ de programación y automatización.
 
 <!-- INFO -->
 <div id="info">
-Nivel: <span id="level">1</span> | Puntos: <span id="score">0</span> | Vidas: <span id="lives">3</span> | Tiempo: <span id="timer">60</span>s
-</div>
-
-<script>
-const board=document.getElementById("board");
+Nivel: <span id="level">1</span> | Puntos: <span id="score">0</span> | Vidas: <span id="lives">3</span> | T
