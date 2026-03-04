@@ -75,38 +75,38 @@ footer{
 }
 
 /* Juego */
-/* Estilos mejorados para que se vea el tablero */
-#board {
-    display: grid;
-    grid-template-columns: repeat(6, 60px);
-    grid-template-rows: repeat(6, 60px);
-    gap: 5px;
-    justify-content: center;
-    margin: 20px auto;
-    background: rgba(0, 0, 0, 0.6); /* Fondo más oscuro para que destaque */
-    padding: 15px;
-    border-radius: 12px;
-    border: 3px solid #00f2ff; /* Borde brillante para separación visual */
+#board{
+    display:grid;
+    grid-template-columns:repeat(6,60px);
+    grid-template-rows:repeat(6,60px);
+    gap:5px;
+    justify-content:center;
+    margin:20px auto;
+    background: rgba(0,0,0,0.6);
+    padding:15px;
+    border-radius:12px;
+    border:3px solid #00f2ff;
     width: max-content;
 }
 
-.cell {
-    width: 60px;
-    height: 60px;
-    border-radius: 8px;
-    background: #ddd; /* Color de celda claro */
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.4); /* Sombra para profundidad */
+.cell{
+    width:60px;
+    height:60px;
+    border-radius:8px;
+    background:#ddd;
+    box-shadow: 0 0 6px rgba(0,0,0,0.4);
 }
+
 .player{
-    background:#00bfff;
+    background:#00bfff !important;
 }
 
 .obstacle{
-    background:#ff4c4c;
+    background:#ff4c4c !important;
 }
 
 .goal{
-    background:#4CAF50;
+    background:#4CAF50 !important;
 }
 
 button, .control-btn{
@@ -178,8 +178,10 @@ controlado mediante comandos de teclado o botones en pantalla, aplicando princip
 de programación y automatización.
 </p>
 
+<!-- TABLERO -->
 <div id="board"></div>
 
+<!-- BOTONES -->
 <div class="controls">
 <button class="control-btn" onclick="move('w')">↑</button><br>
 <button class="control-btn" onclick="move('a')">←</button>
@@ -187,28 +189,21 @@ de programación y automatización.
 <button class="control-btn" onclick="move('d')">→</button>
 </div>
 
+<!-- INFO -->
 <div id="info">
 Nivel: <span id="level">1</span> | Puntos: <span id="score">0</span> | Vidas: <span id="lives">3</span> | Tiempo: <span id="timer">60</span>s
 </div>
 
 <script>
-const board = document.getElementById("board");
-const size = 6;
+const board=document.getElementById("board");
+const size=6;
 
-let level = 1;
-let score = 0;
-let lives = 3;
-let timer = 60;
+let level=1;
+let score=0;
+let lives=3;
+let timer=60;
 let timerInterval;
 
-let player = {x:0, y:0};
-let goal = {x:5, y:5};
-let obstacles = [];
-
-function generateObstacles(){
-    obstacles=[];
-    for(let i=0;i<level+4;i++){
-        let obsX, obsY;
-        do{
-            obsX=Math.floor(Math.random()*size);
-            obsY=Math.floor(Math.random()*size);
+let player={x:0,y:0};
+let goal={x:5,y:5};
+let obs
