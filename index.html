@@ -2,124 +2,145 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jose Daniel Galvis - 1001</title>
+<title>Proyecto de Investigación - Automatización</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, sans-serif;
-}
 
 body{
-    background: linear-gradient(135deg, #1f3c88, #4a69bd);
-    color:#333;
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f2027;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
 }
 
-header{
-    background:white;
-    padding:20px;
-    text-align:center;
-    box-shadow:0 4px 10px rgba(0,0,0,0.2);
-}
-
-header h1{
-    color:#1f3c88;
-}
-
+/* Barra superior */
 nav{
-    margin-top:10px;
+    background: rgba(0,0,0,0.7);
+    padding:15px;
+    text-align:center;
+    position: sticky;
+    top:0;
 }
 
 nav a{
+    color:white;
     text-decoration:none;
-    margin:10px;
-    color:#4a69bd;
+    margin:0 15px;
     font-weight:bold;
+    transition:0.3s;
 }
 
-section{
-    background:white;
-    margin:30px auto;
-    padding:25px;
-    width:85%;
-    max-width:900px;
-    border-radius:12px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.15);
+nav a:hover{
+    color:#00f2ff;
 }
 
-h2{
-    color:#1f3c88;
+/* Encabezado principal */
+header{
+    text-align:center;
+    padding:60px 20px;
+}
+
+header h1{
+    font-size:40px;
     margin-bottom:10px;
 }
 
+header p{
+    font-size:18px;
+    opacity:0.8;
+}
+
+/* Secciones */
+section{
+    max-width:900px;
+    margin:40px auto;
+    padding:30px;
+    background: rgba(255,255,255,0.08);
+    border-radius:15px;
+    box-shadow: 0 0 20px rgba(0,255,255,0.2);
+}
+
+h2{
+    border-left:5px solid #00f2ff;
+    padding-left:10px;
+}
+
+/* Botón */
+button{
+    background:#00f2ff;
+    border:none;
+    padding:12px 25px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+button:hover{
+    background:white;
+    color:black;
+}
+
+/* Footer */
 footer{
     text-align:center;
-    padding:15px;
-    color:white;
+    padding:20px;
+    background:black;
+    margin-top:40px;
+    font-size:14px;
+    opacity:0.7;
 }
+
 </style>
-
 </head>
-
 <body>
-
-<header>
-<h1>Jose Daniel Galvis</h1>
-<p>Curso 1001 - Página Web Académica</p>
 
 <nav>
 <a href="#inicio">Inicio</a>
-<a href="#evidencias">Evidencias</a>
 <a href="#proyecto">Proyecto</a>
-<a href="#contacto">Contacto</a>
+<a href="#objetivos">Objetivos</a>
+<a href="#actividad">Actividad</a>
 </nav>
+
+<header id="inicio">
+<h1>Proyecto de Investigación</h1>
+<p>Aplicación de la Automatización</p>
+<p><strong>Autor:</strong> José Daniel Galvis - Grado 1001</p>
 </header>
 
-<<section id="proyecto">
-<h2>Proyecto de Investigación: Aplicación de la Automatización</h2>
-
-<p>
-Este proyecto de investigación tiene como finalidad analizar y comprender
-la importancia de la automatización en diferentes contextos tecnológicos
-y cotidianos. La automatización permite optimizar procesos, reducir errores
-y mejorar la eficiencia en distintas áreas.
-</p>
-
-<p>
-A través del desarrollo de esta página web se evidencian los avances,
-actividades y aprendizajes relacionados con el tema, integrando además
-un componente práctico como el juego didáctico 6x6, el cual demuestra
-la aplicación de comandos y lógica de programación.
-</p>
-
-<p>
-El objetivo principal es fortalecer las competencias en investigación,
-análisis, pensamiento lógico y desarrollo web, aplicando herramientas
-tecnológicas modernas.
-</p>
-
-</section>
-
-<section id="evidencias">
-<h2>Evidencias</h2>
-<p>Aquí se agregarán capturas, trabajos y avances realizados durante el curso.</p>
-</section>
-
 <section id="proyecto">
-<h2>Proyecto</h2>
-<p>En esta sección se mostrará el desarrollo del juego didáctico 6x6 como actividad de apertura.</p>
+<h2>Descripción del Proyecto</h2>
+<p>
+Este proyecto tiene como propósito analizar la aplicación de la automatización
+en diferentes contextos tecnológicos e industriales. Se estudia cómo los sistemas
+automatizados permiten mejorar la eficiencia, reducir errores humanos y optimizar recursos.
+</p>
 </section>
 
-<section id="contacto">
-<h2>Información</h2>
-<p>Institución educativa - Curso 1001</p>
+<section id="objetivos">
+<h2>Objetivos</h2>
+<ul>
+<li>Comprender el concepto de automatización.</li>
+<li>Investigar su impacto en la industria moderna.</li>
+<li>Aplicar lógica de programación en un entorno práctico.</li>
+<li>Desarrollar habilidades en diseño y desarrollo web.</li>
+</ul>
+</section>
+
+<section id="actividad">
+<h2>Actividad Práctica</h2>
+<p>
+Como evidencia práctica se desarrollará un juego didáctico tipo tablero 6x6,
+controlado mediante comandos de teclado, aplicando principios de programación
+y automatización.
+</p>
+<br>
+<button>Juego Próximamente</button>
 </section>
 
 <footer>
-<p>© 2026 Jose Daniel Galvis</p>
+© 2026 - Proyecto Académico | Aplicación de la Automatización
 </footer>
 
 </body>
