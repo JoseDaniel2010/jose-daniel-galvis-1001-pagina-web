@@ -64,6 +64,13 @@ h2{
     padding-left:10px;
 }
 
+/* Sección de actividad con fondo oscuro sólido para tablero */
+#actividad {
+    background: #111;
+    padding: 20px;
+    border-radius: 12px;
+}
+
 /* Footer */
 footer{
     text-align:center;
@@ -82,10 +89,10 @@ footer{
     gap:5px;
     justify-content:center;
     margin:20px auto;
-    background: rgba(0,0,0,0.6);
-    padding:15px;
+    padding:10px;
     border-radius:12px;
-    border:3px solid #00f2ff;
+    background: #222;
+    border:2px solid #00f2ff;
     width: max-content;
 }
 
@@ -93,7 +100,7 @@ footer{
     width:60px;
     height:60px;
     border-radius:8px;
-    background:#ddd;
+    background:#aaa;
     box-shadow: 0 0 6px rgba(0,0,0,0.4);
 }
 
@@ -196,14 +203,3 @@ Nivel: <span id="level">1</span> | Puntos: <span id="score">0</span> | Vidas: <s
 
 <script>
 const board=document.getElementById("board");
-const size=6;
-
-let level=1;
-let score=0;
-let lives=3;
-let timer=60;
-let timerInterval;
-
-let player={x:0,y:0};
-let goal={x:5,y:5};
-let obs
